@@ -46,6 +46,3 @@ The Nutrition Planner is a web application designed to help users plan their mea
 5.**Start the Application**:
   ```bash
   npm start
-
-
-
