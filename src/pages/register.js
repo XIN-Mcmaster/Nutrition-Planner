@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormControl, Button, Container, FormGroup, FormLabel, Row, Col } from 'react-bootstrap';
-import { Link,useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import bg from '../images/bg_1.jpg';
 import '../Styles/login.css'
 
@@ -22,18 +22,18 @@ const Registration = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          username:name, 
-          email:email, 
-          password:password 
+        body: JSON.stringify({
+          username: name,
+          email: email,
+          password: password
         }),
       });
 
       const json = await response.json()
-      if(json.user){
+      if (json.user) {
         navigate('/login')
       }
-      
+
     } catch (error) {
       console.error('Registration failed:', error);
     }
@@ -62,10 +62,10 @@ const Registration = () => {
                     <FormControl type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                   </FormGroup>
                   <div className="d-flex justify-content-between align-items-center">
-                  <Link to="/login">
-                    <Button className="btn btn-block btn-color">Login</Button>
-                  </Link>
-                  <Button onClick={handleSubmit} className="btn btn-block btn-color">Submit</Button>
+                    <Link to="/login">
+                      <Button className="btn btn-block btn-color">Login</Button>
+                    </Link>
+                    <Button onClick={handleSubmit} className="btn btn-block btn-color">Submit</Button>
                   </div>
                 </Form>
               </Col>
