@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './Styles/index.css';
+import 'react-multi-carousel/lib/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Registration from './pages/register';
+import Login from './pages/login';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import CreatePlan from './pages/createPlan';
+import MyRecipe from './pages/myRecipe';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { UserProvider } from './UserContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Router>
+        <UserProvider>
+            <div>
+                <Routes>
+                    <Route path="/" element={<App />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path='/createPlan' element={<CreatePlan />} />
+                    <Route path='/myRecipe' element={<MyRecipe />} />
+                    <Route path="/register" element={<Registration />} />
+                </Routes>
+            </div>
+        </UserProvider>
+    </Router>
+
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+    

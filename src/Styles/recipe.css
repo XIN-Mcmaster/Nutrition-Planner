@@ -1,0 +1,74 @@
+
+.cal{
+    color: #444A54;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 25px;
+    display: inline-block;
+}
+
+
+ul{
+    list-style: none;
+    color: #444A54;
+    padding-left: 0px;
+  }
+  
+  .nutr li::before {
+    content: "•";
+    font-size: 30px;
+    vertical-align: middle;
+    padding: 0px;
+  }
+  
+  ul li.protein::before {
+    color: #7ACA25;
+  }
+  
+  ul li.fat::before {
+    color: #FFBE61;
+  }
+  
+  ul li.carb::before {
+    color: #F14647;
+  }
+
+  /* .card-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px;
+  } */
+
+  .card {
+    width: 200px;
+  }
+  
+  .card .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card .card-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+  }
+  
+  .card .card-title-overlay .card-title {
+    color: white;
+  }
+
+  .tab-content-wrapper {
+    height: 200px;/* Set your desired fixed height */
+    overflow-y: auto; /* Add scrollbars if content exceeds height */
+  }
+  .mealplans{
+    width: 50%;
+  }

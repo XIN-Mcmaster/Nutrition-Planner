@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Header } from './Components/Header';
+import { useUser } from './UserContext';
+import Banner from './Components/Banner';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 
 function App() {
+  const { userId } = useUser();
+  const navigate = useNavigate();
+
+  
+  useEffect(() => {
+    if (!userId) {
+      navigate('/login');
+    }
+
+  }, [userId]);
+
+  const handleButtonClick = () => {
+
+    navigate('/createPlan');
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+      <Header></Header>
+      <Banner onclick={handleButtonClick}></Banner>
     </div>
   );
 }
 
 export default App;
+
