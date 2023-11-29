@@ -35,14 +35,14 @@ The Nutrition Planner is a web application designed to help users plan their mea
    npm install
    
 3. **Set Up Backend**:
+   
     If using Node.js/Express and MongoDB:
     Set up MongoDB and configure the connection in the backend code.
-    Start the backend server.
-   
-4.**Start the Server**:
-    ```bash
-    node server.js
-    
-5.**Start the Application**:
-  ```bash
-  npm start
+
+5. **Start the Server**:
+   ```bash
+   node server.js
+
+6. **Start the Application**:
+   ```bash
+   npm start
